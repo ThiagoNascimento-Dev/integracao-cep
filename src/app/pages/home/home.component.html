@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="search">
+        <h2>Buscar cep</h2>
+        <form [formGroup]="formCep">
+            <label for="inputCep">
+                <input type="text" id="inputCep" formControlName="cep" placeholder="Digite o cep">
+                <button (click)="search()">Buscar</button>
+            </label>
+        </form>
+    </div>
+    @if (exibir) {
+        <div class="search">
+            @for (item of endereco; track item) {
+                <label>
+                    <h3>Cep:</h3>
+                <p>{{item.cep}}</p>
+                </label>
+                <label>
+                    <h3>Logradouro:</h3>
+                    <p>{{item.logradouro}}</p>
+                </label>
+                <label>
+                    <h3>Bairro:</h3>
+                    {{item.bairro}}
+                </label>
+                <label>
+                    <h3>Localidade:</h3>
+                    {{item.localidade}}
+                </label>
+                <label>
+                    <h3>Estado:</h3>
+                    {{item.estado}}
+                </label>
+                <label>
+                    <h3>UF:</h3>
+                    {{item.uf}}
+                </label>
+            }
+        </div>
+    }
+    
+</div>
